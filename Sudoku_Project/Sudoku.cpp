@@ -5,7 +5,7 @@ Sudoku::~Sudoku()
 {
 }
 
-Sudoku::Sudoku()  //³õÊ¼»¯
+Sudoku::Sudoku()  //åˆå§‹åŒ–
 {
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
@@ -20,11 +20,11 @@ void Sudoku::createSudoku(int num)
 	err = fopen_s(&resultfile1, "sudoku.txt", "w");
 	if (err != 0)
 	{
-		printf("´´½¨ÎÄµµÊ§°Ü\n");
+		printf("åˆ›å»ºæ–‡æ¡£å¤±è´¥\n");
 
 	}
 
-	int count = 0;  //ÒÑ²úÉúÊı¶À¸öÊı
+	int count = 0;  //å·²äº§ç”Ÿæ•°ç‹¬ä¸ªæ•°
 	int shift[9] = { 0, 3, 6, 1, 4, 7, 2, 5, 8 };
 
 	for (int i = 0; i < 6; i++)
@@ -57,7 +57,7 @@ void Sudoku::createSudoku(int num)
 				//cout <<"sh2"<< shift << endl;
 			}
 
-			char row[10] = "123456789";
+			char row[10] = "812345679";
 			for (int k = 0; k < 40320; k++)
 			{
 				if (count >= num)
@@ -103,13 +103,13 @@ bool Sudoku::isPlace(int count)
 	int row = count / 9;
 	int col = count % 9;
 	int j;
-	for (j = 0; j < 9; j++)     //Í¬Ò»ĞĞ
+	for (j = 0; j < 9; j++)     //åŒä¸€è¡Œ
 	{
 		if (grid[row][j] == grid[row][col] && j != col)
 			return false;
 	}
 
-	for (j = 0; j < 9; j++)     //Í¬Ò»ÁĞ
+	for (j = 0; j < 9; j++)     //åŒä¸€åˆ—
 	{
 		if (grid[j][col] == grid[row][col] && j != row)
 			return false;
