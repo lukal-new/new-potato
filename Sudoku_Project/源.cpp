@@ -17,15 +17,22 @@
 
 	int main(int argc, char* argv[])
 	{
+		//int type = 0;
+		//int num = 0;
 		if (argc != 3)
 		{
-			cout << "ÊäÈë¸öÊı²»ºÏ·¨" << endl;
+			cout << "è¾“å…¥ä¸ªæ•°ä¸åˆæ³•" << endl;
 		}
 		else
 		{
 			Sudoku M;
+
+			M.argcc = argc;
+
 			if (strcmp(argv[1], "-c") == 0)
 			{
+				M.type = 'c';
+
 				int len = strlen(argv[2]);
 				int num = 0;
 
@@ -35,12 +42,13 @@
 					{
 			
 						num = num * 10 + (argv[2][i] - '0');
-						//cout << "ÕıÔÚÉú³É"<<num<<"¸öÊı¶ÀÖÕ¾Ö" << endl;
+						//cout << "æ­£åœ¨ç”Ÿæˆ"<<num<<"ä¸ªæ•°ç‹¬ç»ˆå±€" << endl;
 					}
 					else
 					{
-						printf("ÊäÈë²»ºÏ·¨£¬ÊäÈëÊı×ÖÓ¦ÔÚ0-9Ö®¼ä\n");
+						printf("è¾“å…¥ä¸åˆæ³•ï¼Œè¾“å…¥æ•°å­—åº”åœ¨0-9ä¹‹é—´\n");
 						num = -1;
+						M.isint = false;
 						break;
 
 					}
@@ -48,24 +56,41 @@
 				}
 				if (num != -1)
 				{
-					clock_t s_time, e_time;
-					s_time = clock();
-					cout << "ÕıÔÚÉú³É" << num << "¸öÊı¶ÀÖÕ¾Ö" << endl;
-					M.createSudoku(num);
-					e_time = clock();
-					cout << "×ÜÓÃÊ±:" << (double)(e_time - s_time) / CLOCKS_PER_SEC << "S" << endl;
+					if (num==0)
+					{
+						printf("è¾“å…¥ä¸åˆæ³•ï¼Œç”Ÿæˆæ•°ç‹¬ä¸ªæ•°åº”å¤§äº0\n");
+					}
+					else if (num>1000000)
+					{
+						printf("è¾“å…¥ä¸åˆæ³•ï¼Œç”Ÿæˆæ•°åº¦ä¸ªæ•°åº”å°äºä¸€ç™¾ä¸‡\n");
+					}
+					else
+					{
+						M.num = num;
+						clock_t s_time, e_time;
+						s_time = clock();
+						cout << "æ­£åœ¨ç”Ÿæˆ" << num << "ä¸ªæ•°ç‹¬ç»ˆå±€" << endl;
+						M.createSudoku(num);
+						e_time = clock();
+						cout << "æ€»ç”¨æ—¶:" << (double)(e_time - s_time) / CLOCKS_PER_SEC << "S" << endl;
 
+					}
+					
 				}
 			}
 			else if (strcmp(argv[1], "-s") == 0)
 			{
+				M.type = 's';
+
 				errno_t err;
 				FILE *tryopen;
 				//fopen_s(&tryopen, "a.txt", "w");
 				err = fopen_s(&tryopen, argv[2], "r");
 				if (err != 0)
 				{
-					printf("´ò¿ªÎÄµµÊ§°Ü\n");
+					M.isaddress = false;
+					printf("æ‰“å¼€æ–‡æ¡£å¤±è´¥\n");
+
 
 				}
 				else
@@ -74,12 +99,12 @@
 					s_time = clock();
 					M.solveSudoku(string(argv[2]));
 					e_time = clock();
-					cout << "×ÜÓÃÊ±:" << (double)(e_time - s_time) / CLOCKS_PER_SEC << "S" << endl;
+					cout << "æ€»ç”¨æ—¶:" << (double)(e_time - s_time) / CLOCKS_PER_SEC << "S" << endl;
 				}
 			}
 			else
 			{
-				cout << "ÊäÈë²»ºÏ·¨" << endl;
+				cout << "è¾“å…¥ä¸åˆæ³•" << endl;
 			}
 		}
 		return 0;
