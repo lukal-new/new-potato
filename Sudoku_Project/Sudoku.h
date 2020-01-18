@@ -17,13 +17,20 @@ private:
 	char grid[9][9] = { 0 };
 	FILE *resultfile1;
 	FILE *resultfile2;
+	
 
 public:
+	int type;
+	int num;
+	bool isint;
+	bool isaddress;
+	int argcc;
 	Sudoku();
 	~Sudoku();
 	void solveSudoku(string);
 	void createSudoku(int);
 	void backtrace(int );
 	bool isPlace(int );
+	void check(int argc, char* argv[]);
 };
 
