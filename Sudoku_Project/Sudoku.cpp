@@ -1,5 +1,86 @@
 #include "Sudoku.h"
 
+void Sudoku::check(int argc, char* argv[])
+{
+	if (argc != 3)
+	{
+		cout << "输入个数不合法" << endl;
+	}
+	else
+	{
+		argcc = argc;
+
+		if (strcmp(argv[1], "-c") == 0)
+		{
+			type = 'c';
+
+			int len = strlen(argv[2]);
+			int num = 0;
+
+			for (int i = 0; i < len; i++)
+			{
+				if (argv[2][i] >= '0'&&argv[2][i] <= '9')
+				{
+
+					num = num * 10 + (argv[2][i] - '0');
+					//cout << "正在生成"<<num<<"个数独终局" << endl;
+				}
+				else
+				{
+					printf("输入不合法，输入数字应在0-9之间\n");
+					num = -1;
+					isint = false;
+					break;
+
+				}
+
+			}
+			if (num != -1)
+			{
+				if (num == 0)
+				{
+					printf("输入不合法，生成数独个数应大于0\n");
+				}
+				else if (num > 1000000)
+				{
+					printf("输入不合法，生成数度个数应小于一百万\n");
+				}
+				else
+				{
+					num = num;
+			
+
+				}
+
+			}
+		}
+		else if (strcmp(argv[1], "-s") == 0)
+		{
+			type = 's';
+
+			errno_t err;
+			FILE *tryopen;
+			//fopen_s(&tryopen, "a.txt", "w");
+			err = fopen_s(&tryopen, argv[2], "r");
+			if (err != 0)
+			{
+				isaddress = false;
+				printf("打开文档失败\n");
+
+
+			}
+			else
+			{
+			}
+		}
+		else
+		{
+			cout << "输入不合法" << endl;
+		}
+	}
+
+}
+
 
 Sudoku::~Sudoku()
 {
@@ -7,6 +88,9 @@ Sudoku::~Sudoku()
 
 Sudoku::Sudoku()  //初始化
 {
+	isint = true;
+	isaddress = true;
+	argcc = 0;
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
 			grid[i][j] = 0;
@@ -57,7 +141,7 @@ void Sudoku::createSudoku(int num)
 				//cout <<"sh2"<< shift << endl;
 			}
 
-			char row[10] = "812345679";
+			char row[10] = "912345678";
 			for (int k = 0; k < 40320; k++)
 			{
 				if (count >= num)
@@ -134,14 +218,13 @@ void Sudoku::backtrace(int count)
 	{
 		for (int i = 0; i < 9; ++i)
 		{
-
 			fprintf(resultfile2, "%c %c %c %c %c %c %c %c %c\n", grid[i][0], grid[i][1], grid[i][2], grid[i][3], grid[i][4], grid[i][5], grid[i][6], grid[i][7], grid[i][8]);
 		}
 		fputs("\n", resultfile2);
 		return;
 	}
-	int row = count / 9;   //position
-	int col = count % 9;  //position
+	int row = count / 9;  
+	int col = count % 9;  
 	if (grid[row][col] == '0')
 	{
 		for (int i = 1; i <= 9; i++)
@@ -180,6 +263,7 @@ void Sudoku::solveSudoku(string path)
 			if (line == 9)
 			{
 				for (int i = 0; i < 9; i++)
+				{
 					for (int j = 0; j < 9; j++)
 					{
 						grid[i][j] = temp[i][2 * j];
@@ -189,12 +273,13 @@ void Sudoku::solveSudoku(string path)
 							break;
 						}
 					}
+				}
 				getline(problemfile, str);
 				line = 0;
 				if (exc)
 				{
 					exc = false;
-					cout << "Error!" << endl;
+					cout << "存在不合法局面" << endl;
 					continue;
 				}
 				total++;
