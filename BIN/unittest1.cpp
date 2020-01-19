@@ -13,7 +13,7 @@
 
 #include"../Project1/Sudoku.h"
 #include"../Project1/Sudoku.cpp"
-#include"../Project1/Ô´.cpp"
+#include"../Project1/æº.cpp"
 
 
 
@@ -68,7 +68,7 @@ namespace SudokuUnitTest1
 
 
 
-			strcpy_s(argv_c[0], 100, "sudoku.exe");
+			strcpy_s(argv_c[0], 100, "Project1.exe");
 
 			strcpy_s(argv_c[1], 100, "-c");
 
@@ -76,11 +76,11 @@ namespace SudokuUnitTest1
 
 
 
-			strcpy_s(argv_s[0], 100, "sudoku.exe");
+			strcpy_s(argv_s[0], 100, "Project1.exe");
 
 			strcpy_s(argv_s[1], 100, "-s");
 
-			strcpy_s(argv_s[2], 100, "C:\\Users\\°ÙÄ½´óµÄ¶ş´ÎÖØÉú\Desktop\Project1\Debug\b.txt");
+			strcpy_s(argv_s[2], 100, "C:\\Users\\ç™¾æ…•å¤§çš„äºŒæ¬¡é‡ç”Ÿ\Desktop\Project1\Debug\b.txt");
 
 		}
 
@@ -88,7 +88,7 @@ namespace SudokuUnitTest1
 
 
 
-		TEST_METHOD(TestMethod1) //¶ÔÃüÁîĞĞÊäÈëµÄ²âÊÔ£¨-c N µÄÕıÈ·ÊäÈë£©
+		TEST_METHOD(TestMethod1) //å¯¹å‘½ä»¤è¡Œè¾“å…¥çš„æµ‹è¯•ï¼ˆ-c N çš„æ­£ç¡®è¾“å…¥ï¼‰
 
 		{
 
@@ -106,7 +106,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod2) //¶ÔÃüÁîĞĞÊäÈëµÄ²âÊÔ£¨-s addr µÄÕıÈ·ÊäÈë£©
+		TEST_METHOD(TestMethod2) //å¯¹å‘½ä»¤è¡Œè¾“å…¥çš„æµ‹è¯•ï¼ˆ-s addr çš„æ­£ç¡®è¾“å…¥ï¼‰
 
 		{
 
@@ -122,7 +122,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod3)//¶ÔÃüÁîĞĞÊäÈë²ÎÊıÓĞÎóµÄ²âÊÔ£¨-c ·Çint£©
+		TEST_METHOD(TestMethod3)//å¯¹å‘½ä»¤è¡Œè¾“å…¥å‚æ•°æœ‰è¯¯çš„æµ‹è¯•ï¼ˆ-c éintï¼‰
 
 		{
 
@@ -141,11 +141,11 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod4)//¶ÔÃüÁîĞĞÊäÈë²ÎÊıÓĞÎóµÄ²âÊÔ£¨-s ÕÒ²»µ½µØÖ·£©
+		TEST_METHOD(TestMethod4)//å¯¹å‘½ä»¤è¡Œè¾“å…¥å‚æ•°æœ‰è¯¯çš„æµ‹è¯•ï¼ˆ-s æ‰¾ä¸åˆ°åœ°å€ï¼‰
 
 		{
 
-			strcpy_s(argv_s[2], 100, "C:\\Users\\°ÙÄ½´óµÄ¶ş´ÎÖØÉú\Desktop\Project1\Debug\b.txt");
+			strcpy_s(argv_s[2], 100, "C:\\Users\\ç™¾æ…•å¤§çš„äºŒæ¬¡é‡ç”Ÿ\Desktop\Project1\Debug\b.txt");
 
 			strcpy_s(argv_s[1], 100, "-s");
 
@@ -157,7 +157,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod5)//¶ÔÃüÁîĞĞÊäÈë²ÎÊıÓĞÎóµÄ²âÊÔ£¨-v sff£©
+		TEST_METHOD(TestMethod5)//å¯¹å‘½ä»¤è¡Œè¾“å…¥å‚æ•°æœ‰è¯¯çš„æµ‹è¯•ï¼ˆ-v sffï¼‰
 
 		{
 
@@ -179,7 +179,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod6)//¶ÔÊäÈë²ÎÊı¸öÊıÓĞÎóµÄ²âÊÔ
+		TEST_METHOD(TestMethod6)//å¯¹è¾“å…¥å‚æ•°ä¸ªæ•°æœ‰è¯¯çš„æµ‹è¯•
 
 		{
 
@@ -197,7 +197,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod7)//¶ÔÊäÈë²ÎÊıÉú³ÉÊı¶ÀÖÕ¾Ö¸öÊıÓĞÎóµÄ²âÊÔ£¨-c 10000000£©
+		TEST_METHOD(TestMethod7)//å¯¹è¾“å…¥å‚æ•°ç”Ÿæˆæ•°ç‹¬ç»ˆå±€ä¸ªæ•°æœ‰è¯¯çš„æµ‹è¯•ï¼ˆ-c 10000000ï¼‰
 
 		{
 
@@ -214,7 +214,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod8)//¶ÔÊäÈë²ÎÊıÉú³ÉÊı¶ÀÖÕ¾Ö¸öÊıÓĞÎóµÄ²âÊÔ£¨-c 0£©
+		TEST_METHOD(TestMethod8)//å¯¹è¾“å…¥å‚æ•°ç”Ÿæˆæ•°ç‹¬ç»ˆå±€ä¸ªæ•°æœ‰è¯¯çš„æµ‹è¯•ï¼ˆ-c 0ï¼‰
 
 		{
 
@@ -231,7 +231,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod9)//¶ÔÇó½âÊı¶ÀµÄisplaceº¯Êı½øĞĞµÄÓĞÎó²âÊÔ
+		TEST_METHOD(TestMethod9)//å¯¹æ±‚è§£æ•°ç‹¬çš„isplaceå‡½æ•°è¿›è¡Œçš„æœ‰è¯¯æµ‹è¯•
 
 		{
 
@@ -267,7 +267,7 @@ namespace SudokuUnitTest1
 
 			int j;
 
-			for (j = 0; j < 9; j++)     //Í¬Ò»ĞĞ
+			for (j = 0; j < 9; j++)     //åŒä¸€è¡Œ
 
 			{
 
@@ -289,7 +289,7 @@ namespace SudokuUnitTest1
 
 			row = 3; col = 0; flag = 0;
 
-			for (j = 0; j < 9; j++)     //Í¬Ò»ÁĞ
+			for (j = 0; j < 9; j++)     //åŒä¸€åˆ—
 
 			{
 
@@ -315,7 +315,7 @@ namespace SudokuUnitTest1
 
 			int baseCol = col / 3 * 3;
 
-			for (j = baseRow; j < baseRow + 3; j++)   //Í¬Ò»¹¬
+			for (j = baseRow; j < baseRow + 3; j++)   //åŒä¸€å®«
 
 			{
 
@@ -349,7 +349,7 @@ namespace SudokuUnitTest1
 
 
 
-		TEST_METHOD(TestMethod10)//¶ÔÇó½âÊı¶ÀµÄisplaceº¯Êı½øĞĞµÄÕıÈ·²âÊÔ
+		TEST_METHOD(TestMethod10)//å¯¹æ±‚è§£æ•°ç‹¬çš„isplaceå‡½æ•°è¿›è¡Œçš„æ­£ç¡®æµ‹è¯•
 
 		{
 
@@ -383,7 +383,7 @@ namespace SudokuUnitTest1
 
 			int j;
 
-			for (j = 0; j < 9; j++)     //Í¬Ò»ĞĞ
+			for (j = 0; j < 9; j++)     //åŒä¸€è¡Œ
 
 			{
 
@@ -399,7 +399,7 @@ namespace SudokuUnitTest1
 
 			}
 
-			for (j = 0; j < 9; j++)     //Í¬Ò»ÁĞ
+			for (j = 0; j < 9; j++)     //åŒä¸€åˆ—
 
 			{
 
@@ -419,7 +419,7 @@ namespace SudokuUnitTest1
 
 			int baseCol = col / 3 * 3;
 
-			for (j = baseRow; j < baseRow + 3; j++)   //Í¬Ò»¹¬
+			for (j = baseRow; j < baseRow + 3; j++)   //åŒä¸€å®«
 
 			{
 
@@ -451,7 +451,7 @@ namespace SudokuUnitTest1
 
 		}
 
-		TEST_METHOD(TestMethod11)//¶ÔÉú³ÉÊı¶ÀÖÕ¾ÖÖĞµÄÈ«ÅÅÁĞº¯Êı¼ì²â
+		TEST_METHOD(TestMethod11)//å¯¹ç”Ÿæˆæ•°ç‹¬ç»ˆå±€ä¸­çš„å…¨æ’åˆ—å‡½æ•°æ£€æµ‹
 
 		{
 
